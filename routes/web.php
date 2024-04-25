@@ -19,5 +19,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
+Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+Route::get('/user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
 
 require __DIR__.'/auth.php';
