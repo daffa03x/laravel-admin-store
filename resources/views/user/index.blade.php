@@ -44,16 +44,16 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-left">
                                                         {{ $item->email }}</td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-left">
-                                                        <a href="#"
+                                                        <a href="{{ route('user.edit', $item->id) }}"
                                                             class="text-blue-500 hover:text-blue-700 hover:underline mr-2">Edit</a>
-                                                        <a href="#"
+                                                        <a href="{{ route('user.destroy', $item->id) }}"
                                                             class="text-red-500 hover:text-red-700 hover:underline">Delete</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="mt-7 mb-3">
+                                    <div class="mt-7 mb-4 mx-6">
                                         {!! $data->links() !!}
                                     </div>
                                 </div>
