@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,5 +26,11 @@ Route::post('/user/store', [UserController::class, 'store'])->name('user.store')
 Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
 Route::get('/user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+Route::get('/katagori/create', [KategoriController::class, 'create'])->name('katagori.create');
+Route::get('/katagori/edit/{id}', [KategoriController::class, 'edit'])->name('katagori.edit');
+Route::post('/katagori/store', [KategoriController::class, 'store'])->name('katagori.store');
+Route::put('/katagori/update/{id}', [KategoriController::class, 'update'])->name('katagori.update');
+Route::get('/katagori/destroy/{id}', [KategoriController::class, 'destroy'])->name('katagori.destroy');
 
 require __DIR__.'/auth.php';
