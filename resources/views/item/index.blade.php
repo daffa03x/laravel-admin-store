@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('User') }}
+            {{ __('Item') }}
         </h2>
     </x-slot>
-
+    <x-success-message />
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -12,9 +12,9 @@
                     <div class="flex flex-col">
                         <div class="flex items-center mb-4">
                             <div class="p-2 font-semibold text-xl text-gray-800 leading-tight">
-                                Data User
+                                Data Item
                             </div>
-                            <a href="{{ route('user.create') }}"
+                            <a href="{{ route('item.create') }}"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto">
                                 Tambah
                             </a>
@@ -28,11 +28,7 @@
                                     </th>
                                     <th scope="col"
                                         class="px-6 py-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider whitespace-nowrap">
-                                        Name
-                                    </th>
-                                    <th scope="col"
-                                        class="px-6 py-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider whitespace-nowrap">
-                                        Email
+                                        Item
                                     </th>
                                     <th scope="col"
                                         class="px-6 py-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider whitespace-nowrap">
@@ -48,11 +44,9 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-left">
                                             {{ $item->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-left">
-                                            {{ $item->email }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-left">
-                                            <a href="{{ route('user.edit', $item->id) }}"
+                                            <a href="{{ route('item.edit', $item->id) }}"
                                                 class="text-blue-500 hover:text-blue-700 hover:underline mr-2">Edit</a>
-                                            <a href="{{ route('user.destroy', $item->id) }}"
+                                            <a href="{{ route('item.destroy', $item->id) }}"
                                                 class="text-red-500 hover:text-red-700 hover:underline">Delete</a>
                                         </td>
                                     </tr>
@@ -63,7 +57,7 @@
                             </tfoot>
                         </table>
                         <div class="mt-7 mb-4">
-                            {!! $data->links() !!}
+                            {{ $data->links() }}
                         </div>
                     </div>
                 </div>
