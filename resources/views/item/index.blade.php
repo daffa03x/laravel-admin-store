@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Kategori') }}
+            {{ __('Item') }}
         </h2>
     </x-slot>
     <x-success-message />
@@ -12,9 +12,9 @@
                     <div class="flex flex-col">
                         <div class="flex items-center mb-4">
                             <div class="p-2 font-semibold text-xl text-gray-800 leading-tight">
-                                Data Kategori
+                                Data Item
                             </div>
-                            <a href="{{ route('kategori.create') }}"
+                            <a href="{{ route('item.create') }}"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto">
                                 Tambah
                             </a>
@@ -28,7 +28,7 @@
                                     </th>
                                     <th scope="col"
                                         class="px-6 py-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider whitespace-nowrap">
-                                        Kategori
+                                        Item
                                     </th>
                                     <th scope="col"
                                         class="px-6 py-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider whitespace-nowrap">
@@ -42,11 +42,11 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-left">
                                             {{ $loop->iteration }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-left">
-                                            {{ $item->name_kategori }}</td>
+                                            {{ $item->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-left">
-                                            <a href="{{ route('kategori.edit', $item->id) }}"
+                                            <a href="{{ route('item.edit', $item->id) }}"
                                                 class="text-blue-500 hover:text-blue-700 hover:underline mr-2">Edit</a>
-                                            <a href="{{ route('kategori.destroy', $item->id) }}"
+                                            <a href="{{ route('item.destroy', $item->id) }}"
                                                 class="text-red-500 hover:text-red-700 hover:underline">Delete</a>
                                         </td>
                                     </tr>
