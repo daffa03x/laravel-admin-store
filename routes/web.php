@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoucherController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -43,6 +45,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/item/edit/{id}', [ItemController::class, 'edit'])->name('item.edit');
     Route::put('/item/update/{id}', [ItemController::class, 'update'])->name('item.update');
     Route::get('/item/destroy/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
+
+    // Game
+    Route::get('/game', [GameController::class, 'index'])->name('game.index');
+    Route::get('/game/create', [GameController::class, 'create'])->name('game.create');
+    Route::post('/game/store', [GameController::class, 'store'])->name('game.store');
+    Route::get('/game/edit/{id}', [GameController::class, 'edit'])->name('game.edit');
+    Route::put('/game/update/{id}', [GameController::class, 'update'])->name('game.update');
+    Route::get('/game/destroy/{id}', [GameController::class, 'destroy'])->name('game.destroy');
+
+    // Voucher
+    Route::get('/voucher', [VoucherController::class, 'index'])->name('voucher.index');
+    Route::get('/voucher/create', [VoucherController::class, 'create'])->name('voucher.create');
+    Route::post('/voucher/store', [VoucherController::class, 'store'])->name('voucher.store');
+    Route::get('/voucher/edit/{id}', [VoucherController::class, 'edit'])->name('voucher.edit');
+    Route::put('/voucher/update/{id}', [VoucherController::class, 'update'])->name('voucher.update');
+    Route::get('/voucher/destroy/{id}', [VoucherController::class, 'destroy'])->name('voucher.destroy');
 });
 
 
