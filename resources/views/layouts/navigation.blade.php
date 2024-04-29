@@ -24,6 +24,12 @@
                     <x-nav-link :href="route('item.index')" :active="request()->routeIs('item.index')">
                         {{ __('Item') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('game.index')" :active="request()->routeIs('game.index')">
+                        {{ __('Game') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('voucher.index')" :active="request()->routeIs('voucher.index')">
+                        {{ __('Voucher') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -95,6 +101,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('item.index')" :active="request()->routeIs('item.index')">
                 {{ __('Item') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('game.index')" :active="request()->routeIs('game.index')">
+                {{ __('Game') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('voucher.index')" :active="request()->routeIs('voucher.index')">
+                {{ __('Voucher') }}
             </x-responsive-nav-link>
         </div>
 

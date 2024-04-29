@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('voucher', function (Blueprint $table) {
+        Schema::create('game', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_game');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->integer('discount');
-            $table->date('expired_at');
+            $table->unsignedBigInteger('id_kategori');
+            $table->unsignedBigInteger('id_item');
+            $table->string('name');
+            $table->string('image');
             $table->timestamps();
 
-            $table->foreign('id_game')->references('id')->on('game');
+            $table->foreign('id_kategori')->references('id')->on('kategori');
+            $table->foreign('id_item')->references('id')->on('item');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('voucher');
+        Schema::dropIfExists('game');
     }
 };
